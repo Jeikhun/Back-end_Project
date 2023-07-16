@@ -1,0 +1,12 @@
+﻿@model Slide
+<div class="card-body">
+    <form method="post" enctype="multipart/form-data">
+        <div class="mb-3 col-md-6">
+            <label asp-for="Image" class="form-label">Image</label>
+            <input accept="image" class="form-control" type="file" asp-for="formFile" placeholder="Select Image" />
+            <span class="text text-danger" asp-validation-for="formFile"></span>
+            @Html.AntiForgeryToken()
+        </div>
+        <button type="submit">Save</button>
+    </form>
+</div>

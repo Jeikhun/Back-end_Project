@@ -1,0 +1,33 @@
+﻿@model Notice
+
+
+<div class="card-body">
+    <form method="post">
+        <div class="mb-3 col-md-6">
+            <label asp-for="Link" class="form-label">Description</label>
+            <input 
+                   class="form-control"
+                   asp-for="Link" />
+            <span class="text text-danger" asp-validation-for="Link"></span>
+
+        </div>
+        <div class="mb-3 col-md-6">
+            <label asp-for=Date class="form-label">Date</label>
+            <input class="form-control"
+                   type="date"
+                   asp-for="Date" />
+            <span class="text text-danger" asp-validation-for="Date"></span>
+        </div>
+
+        <div class="form-group">
+            <div class="checkbox">
+                <label>
+                    <input asp-for="IsDeleted" /> @Html.DisplayNameFor(model => model.IsDeleted)
+                </label>
+            </div>
+        </div>
+        @Html.AntiForgeryToken()
+        <button type="submit">Save</button>
+    </form>
+</div>
+
