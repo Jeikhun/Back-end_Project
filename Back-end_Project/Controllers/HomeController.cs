@@ -18,8 +18,10 @@ namespace Back_end_Project.Controllers
         {
             var model = new ViewModel();
             model.notices = _context.notices.Where(x => !x.IsDeleted).ToList();
-            model.slides = _context.slides.Where(x => !x.IsDeleted).ToList();
+                model.slides = _context.slides.Where(x => !x.IsDeleted).ToList();
             model.courses = _context.courses.Where(x => !x.IsDeleted).ToList();
+            model.information = _context.information.Where(x => !x.IsDeleted).ToList();
+            model.people = _context.people.Where(x => !x.IsDeleted).ToList();
             return View(model);
         }
     }
