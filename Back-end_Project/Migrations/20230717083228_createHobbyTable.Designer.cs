@@ -4,6 +4,7 @@ using Back_end_Project.context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Back_end_Project.Migrations
 {
     [DbContext(typeof(EHDbContext))]
-    partial class EHDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230717083228_createHobbyTable")]
+    partial class createHobbyTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -111,41 +113,6 @@ namespace Back_end_Project.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("information");
-                });
-
-            modelBuilder.Entity("Back_end_Project.Models.Networks", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<DateTime>("CreatedTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Icon")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Link")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("TeacherId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("UpdatedTime")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("TeacherId");
-
-                    b.ToTable("Networks");
                 });
 
             modelBuilder.Entity("Back_end_Project.Models.Notice", b =>
@@ -275,12 +242,18 @@ namespace Back_end_Project.Migrations
                         .HasMaxLength(75)
                         .HasColumnType("nvarchar(75)");
 
+                    b.Property<string>("Fblink")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Fullname")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Instalink")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDeleted")
@@ -290,6 +263,9 @@ namespace Back_end_Project.Migrations
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("PinterestLink")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Skype")
                         .HasMaxLength(50)
@@ -302,6 +278,9 @@ namespace Back_end_Project.Migrations
 
                     b.Property<DateTime>("UpdatedTime")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("Vimeolink")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -340,17 +319,6 @@ namespace Back_end_Project.Migrations
                     b.ToTable("teacherHobbies");
                 });
 
-            modelBuilder.Entity("Back_end_Project.Models.Networks", b =>
-                {
-                    b.HasOne("Back_end_Project.Models.Teacher", "Teacher")
-                        .WithMany("Networks")
-                        .HasForeignKey("TeacherId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Teacher");
-                });
-
             modelBuilder.Entity("Back_end_Project.Models.TeacherHobbies", b =>
                 {
                     b.HasOne("Back_end_Project.Models.Hobby", "Hobby")
@@ -377,8 +345,6 @@ namespace Back_end_Project.Migrations
 
             modelBuilder.Entity("Back_end_Project.Models.Teacher", b =>
                 {
-                    b.Navigation("Networks");
-
                     b.Navigation("TeacherHobbies");
                 });
 #pragma warning restore 612, 618

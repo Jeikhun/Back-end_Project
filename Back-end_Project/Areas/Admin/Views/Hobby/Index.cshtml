@@ -1,0 +1,32 @@
+﻿@model List<Hobby>
+<div class="card-body">
+    <table class="table">
+        <thead>
+            <tr class="text-nowrap">
+                <th>Id</th>
+                <th>Name</th>
+                <th>Created Time</th>
+                <th>Updated Time</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">@item.Id</th>
+                    <td>@item.Name</td>
+                    <td>@item.CreatedTime</td>
+                    <td>@item.UpdatedTime</td>
+
+                    <td><a asp-controller="hobby" asp-action="update" asp-route-id="@item.Id" class="fa-solid fa-pen-to-square"><i></i></a></td>
+                    <td><a asp-controller="hobby" asp-action="delete" asp-route-id="@item.Id" class="fa-solid fa-trash-can"><i></i></a></td>
+
+                </tr>
+            }
+
+        </tbody>
+    </table>
+    <button style="border: none; color: white; background-color: lightskyblue"><a asp-area="admin" asp-controller="hobby" asp-action="create">Create Slide</a></button>
+</div>

@@ -1,0 +1,41 @@
+﻿@* @model List<Teacher>
+
+@foreach (Teacher teacher in Model)
+{
+    <div class="col-md-3 col-sm-4 col-xs-12">
+        <div class="single-teacher mb-45">
+            <div class="single-teacher-img">
+                <a asp-controller="teacher" asp-action="details" asp-route-id="@teacher.Id"><img style="width:270px;height:270px" src="~/assets/img/teacher/@teacher.Image" alt="teacher"></a>
+            </div>
+            <div class="single-teacher-content text-center">
+                <h2><a asp-controller="teacher" asp-action="details" asp-route-id="@teacher.Id">@teacher.Fullname</a></h2>
+                <h4>@teacher.Speciality</h4>
+                <ul>
+
+                    @if (Model.FirstOrDefault().Fblink != null)
+                    {
+                        <li><a href="@Model.FirstOrDefault().Fblink"><i class="zmdi zmdi-facebook"></i></a></li>
+
+                    }
+                    @if (Model.FirstOrDefault().Instalink != null)
+                    {
+                        <li><a href="@Model.FirstOrDefault().Instalink"><i class="zmdi zmdi-instagram"></i></a></li>
+
+                    }
+                    @if (Model.FirstOrDefault().Vimeolink != null)
+                    {
+                        <li><a href="@Model.FirstOrDefault().Vimeolink"><i class="zmdi zmdi-vimeo"></i></a></li>
+
+                    }
+                    @if (Model.FirstOrDefault().PinterestLink != null)
+                    {
+                        <li><a href="@Model.FirstOrDefault().PinterestLink"><i class="zmdi zmdi-pinterest"></i></a></li>
+
+                    }
+
+                </ul>
+            </div>
+        </div>
+    </div>
+}
+ *@
