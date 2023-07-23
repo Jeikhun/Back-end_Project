@@ -1,11 +1,15 @@
 ﻿using Back_end_Project.context;
 using Back_end_Project.Extensions;
 using Back_end_Project.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System.Data;
 
 namespace Back_end_Project.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin")]
     public class CourseController : Controller
     {
         private readonly EHDbContext _dbContext;
@@ -18,12 +22,18 @@ namespace Back_end_Project.Areas.Admin.Controllers
         }
         public IActionResult Index()
         {
+            
+            ViewBag.CourseAssests = _dbContext.cAssets.Where(x => !x.IsDeleted).ToList();
             var courses = _dbContext.courses.Where(x => !x.IsDeleted).ToList();
             return View(courses);
         }
         [HttpGet]
         public IActionResult Create()
         {
+            ViewBag.Languages = _dbContext.Languages.Where(x=>!x.IsDeleted).ToList();
+            ViewBag.Tags = _dbContext.Tags.Where(x=>!x.IsDeleted).ToList();
+            ViewBag.Categories = _dbContext.Categories.Where(x=>!x.IsDeleted).ToList();
+            ViewBag.CourseAssests = _dbContext.cAssets.Where(x => !x.IsDeleted).ToList();
 
 
             return View();
@@ -32,6 +42,10 @@ namespace Back_end_Project.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Course course)
         {
+            ViewBag.Languages = _dbContext.Languages.Where(x => !x.IsDeleted).ToList();
+            ViewBag.Tags = _dbContext.Tags.Where(x => !x.IsDeleted).ToList();
+            ViewBag.Categories = _dbContext.Categories.Where(x => !x.IsDeleted).ToList();
+
             if (!ModelState.IsValid)
             {
                 return View();
@@ -41,6 +55,40 @@ namespace Back_end_Project.Areas.Admin.Controllers
                 ModelState.AddModelError("FormFile", "Duzgun daxil etmemisiniz"); //error mesaji qaytarmaq uchun
             }
             course.Image = course.FormFile.CreateImage(_env.WebRootPath, "assets/img/");
+
+            foreach (var item in course.CategoryIds)
+            {
+                if (!await _dbContext.Categories.AnyAsync(x => x.Id == item))
+                {
+                    ModelState.AddModelError("", "-----");
+                    return View(course);
+                }
+                CourseCategory courseCategories = new CourseCategory
+                {
+                    CategoryId = item,
+                    Course = course,
+                    
+                    CreatedTime = DateTime.Now
+                };
+                await _dbContext.courseCategories.AddAsync(courseCategories);
+
+            }
+            foreach (var item in course.TagIds)
+            {
+                if (!await _dbContext.Tags.AnyAsync(x => x.Id == item))
+                {
+                    ModelState.AddModelError("", "-----");
+                    return View(course);
+                }
+                CourseTag courseTags = new CourseTag
+                {
+                    CourseId = item,
+                    Course = course,
+                    CreatedTime = DateTime.Now
+                };
+                await _dbContext.courseTags.AddAsync(courseTags);
+
+            }
 
             course.CreatedTime = DateTime.Now;
             await _dbContext.courses.AddAsync(course);
@@ -82,8 +130,8 @@ namespace Back_end_Project.Areas.Admin.Controllers
                 exCourse.Image = course.FormFile
                         .CreateImage(_env.WebRootPath, "assets/img/");
             }
-            exCourse.Title = course.Title;
-            exCourse.Text = course.Text;
+            exCourse.Name = course.Name;
+            exCourse.Description = course.Description;
             course.UpdatedTime = DateTime.Now;
             await _dbContext.SaveChangesAsync();
 

@@ -1,13 +1,16 @@
 ﻿using Back_end_Project.context;
 using Back_end_Project.Extensions;
 using Back_end_Project.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Data;
 
 namespace Back_end_Project.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin")]
     public class HobbyController : Controller
     {
         private readonly EHDbContext _context;

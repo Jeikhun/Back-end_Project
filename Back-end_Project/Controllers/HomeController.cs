@@ -1,10 +1,12 @@
 ﻿using Back_end_Project.context;
 using Back_end_Project.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
 namespace Back_end_Project.Controllers
 {
+    
     public class HomeController : Controller
     {
         private readonly EHDbContext _context;

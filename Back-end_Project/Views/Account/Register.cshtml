@@ -1,0 +1,48 @@
+﻿@using Back_end_Project.Areas.Admin.ViewModels;
+@model AccountRegisterVM
+@{
+    Layout = null;
+}
+
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<form method="post" asp-controller="account" asp-action="register">
+    
+
+        <div asp-validation-summary="ModelOnly"></div>
+
+        <div class="form-outline mb-4">
+        <label class="form-label" asp-for="Email">E-mail</label>
+        <input class="form-control" asp-for="Email" />
+        <span asp-validation-for="Email"></span>
+        </div>
+
+    <div class="form-outline mb-4">
+        <label class="form-label" asp-for="Username">Username</label>
+        <input class="form-control" asp-for="Username" />
+        <span asp-validation-for="Username"></span>
+    </div>
+
+
+    <div class="form-outline mb-4">
+        <label class="form-label" asp-for="Password">Password</label>
+        <input class="form-control" asp-for="Password" />
+        <span asp-validation-for="Password"></span>
+    </div>
+
+
+    <div class="form-outline mb-4">
+        <label class="form-label" asp-for="ConfirmPassword">ConfirmPassword</label>
+        <input class="form-control" asp-for="ConfirmPassword" />
+        <span asp-validation-for="ConfirmPassword"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-block mb-4">Register</button>
+        
+            <div class="text-center">
+                <p>Already have an account? <a asp-controller="account" asp-action="login">Login</a></p>
+            </div>
+</form>

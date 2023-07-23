@@ -9,7 +9,6 @@ namespace Back_end_Project.Models
     public class Hobby:BaseModel
     {
 
-        public int Id { get; set; }
 
         [StringLength(maximumLength: 50)]
 

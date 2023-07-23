@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\admin\\css\\demo.css"
     },
     {
+      "Id": "C:\\Users\\GF65\\source\\repos\\Back-end_Project\\Back-end_Project\\wwwroot\\admin\\css\\login.css",
+      "PackagePath": "staticwebassets\\admin\\css\\login.css"
+    },
+    {
       "Id": "C:\\Users\\GF65\\source\\repos\\Back-end_Project\\Back-end_Project\\wwwroot\\admin\\img\\avatars\\1.png",
       "PackagePath": "staticwebassets\\admin\\img\\avatars\\1.png"
     },
@@ -201,6 +205,10 @@
       "PackagePath": "staticwebassets\\admin\\js\\form-basic-inputs.js"
     },
     {
+      "Id": "C:\\Users\\GF65\\source\\repos\\Back-end_Project\\Back-end_Project\\wwwroot\\admin\\js\\login.js",
+      "PackagePath": "staticwebassets\\admin\\js\\login.js"
+    },
+    {
       "Id": "C:\\Users\\GF65\\source\\repos\\Back-end_Project\\Back-end_Project\\wwwroot\\admin\\js\\main.js",
       "PackagePath": "staticwebassets\\admin\\js\\main.js"
     },
@@ -361,6 +369,10 @@
       "PackagePath": "staticwebassets\\assets\\css\\owl.video.play.png"
     },
     {
+      "Id": "C:\\Users\\GF65\\source\\repos\\Back-end_Project\\Back-end_Project\\wwwroot\\assets\\css\\register.css",
+      "PackagePath": "staticwebassets\\assets\\css\\register.css"
+    },
+    {
       "Id": "C:\\Users\\GF65\\source\\repos\\Back-end_Project\\Back-end_Project\\wwwroot\\assets\\css\\reset.css",
       "PackagePath": "staticwebassets\\assets\\css\\reset.css"
     },
@@ -469,6 +481,10 @@
       "PackagePath": "staticwebassets\\assets\\fonts\\ionicons28b5.woff"
     },
     {
+      "Id": "C:\\Users\\GF65\\source\\repos\\Back-end_Project\\Back-end_Project\\wwwroot\\assets\\img\\0723a268-da33-4af7-9e0d-caa98aae89f1WhatsApp Image 2023-06-27 at 14.30.31.jpeg",
+      "PackagePath": "staticwebassets\\assets\\img\\0723a268-da33-4af7-9e0d-caa98aae89f1WhatsApp Image 2023-06-27 at 14.30.31.jpeg"
+    },
+    {
       "Id": "C:\\Users\\GF65\\source\\repos\\Back-end_Project\\Back-end_Project\\wwwroot\\assets\\img\\09e1fdf5-992f-4a4e-becb-6e4477ad5f6ebmw-328i-2016-wba8e9g54gnt44077-img6.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\09e1fdf5-992f-4a4e-becb-6e4477ad5f6ebmw-328i-2016-wba8e9g54gnt44077-img6.jpg"
     },
@@ -477,24 +493,100 @@
       "PackagePath": "staticwebassets\\assets\\img\\0c138230-8555-4afc-96a5-1783366d1111375x500.75126.jpg"
     },
     {
+      "Id": "C:\\Users\\GF65\\source\\repos\\Back-end_Project\\Back-end_Project\\wwwroot\\assets\\img\\132df411-f01a-41c2-ba1a-4ba45ac335a549068410.png",
+      "PackagePath": "staticwebassets\\assets\\img\\132df411-f01a-41c2-ba1a-4ba45ac335a549068410.png"
+    },
+    {
       "Id": "C:\\Users\\GF65\\source\\repos\\Back-end_Project\\Back-end_Project\\wwwroot\\assets\\img\\1ce0fee5-afd2-449e-8302-87eddcf03fad375x500.75126.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\1ce0fee5-afd2-449e-8302-87eddcf03fad375x500.75126.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GF65\\source\\repos\\Back-end_Project\\Back-end_Project\\wwwroot\\assets\\img\\25676f6b-c02f-4d63-8dca-f30db4cbb567ghghgh.png",
+      "PackagePath": "staticwebassets\\assets\\img\\25676f6b-c02f-4d63-8dca-f30db4cbb567ghghgh.png"
+    },
+    {
+      "Id": "C:\\Users\\GF65\\source\\repos\\Back-end_Project\\Back-end_Project\\wwwroot\\assets\\img\\2b0d5a35-5374-4f83-b9be-837d8f967175ghghgh.png",
+      "PackagePath": "staticwebassets\\assets\\img\\2b0d5a35-5374-4f83-b9be-837d8f967175ghghgh.png"
     },
     {
       "Id": "C:\\Users\\GF65\\source\\repos\\Back-end_Project\\Back-end_Project\\wwwroot\\assets\\img\\2c54d473-7c4d-4fee-a668-9bea97eb1a5e375x500.75126.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\2c54d473-7c4d-4fee-a668-9bea97eb1a5e375x500.75126.jpg"
     },
     {
+      "Id": "C:\\Users\\GF65\\source\\repos\\Back-end_Project\\Back-end_Project\\wwwroot\\assets\\img\\31fcc7ad-681d-4930-9f3c-e59ff2b4a26fghghgh.png",
+      "PackagePath": "staticwebassets\\assets\\img\\31fcc7ad-681d-4930-9f3c-e59ff2b4a26fghghgh.png"
+    },
+    {
       "Id": "C:\\Users\\GF65\\source\\repos\\Back-end_Project\\Back-end_Project\\wwwroot\\assets\\img\\331e7e48-2032-4676-8d2b-89309c36c8ebbmw-328i-2016-wba8e9g54gnt44077-img5.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\331e7e48-2032-4676-8d2b-89309c36c8ebbmw-328i-2016-wba8e9g54gnt44077-img5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GF65\\source\\repos\\Back-end_Project\\Back-end_Project\\wwwroot\\assets\\img\\3352a831-e62c-481d-a7b3-f105b0df98eb49068410.png",
+      "PackagePath": "staticwebassets\\assets\\img\\3352a831-e62c-481d-a7b3-f105b0df98eb49068410.png"
+    },
+    {
+      "Id": "C:\\Users\\GF65\\source\\repos\\Back-end_Project\\Back-end_Project\\wwwroot\\assets\\img\\44681be2-b75c-4adf-b791-fd540d5e76eb375x500.75126..jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\44681be2-b75c-4adf-b791-fd540d5e76eb375x500.75126..jpg"
+    },
+    {
+      "Id": "C:\\Users\\GF65\\source\\repos\\Back-end_Project\\Back-end_Project\\wwwroot\\assets\\img\\4830a869-eea4-404a-b4ec-0d096a3a55e2ghghgh.png",
+      "PackagePath": "staticwebassets\\assets\\img\\4830a869-eea4-404a-b4ec-0d096a3a55e2ghghgh.png"
+    },
+    {
+      "Id": "C:\\Users\\GF65\\source\\repos\\Back-end_Project\\Back-end_Project\\wwwroot\\assets\\img\\4a0bfecc-dc58-49bb-aa0d-d0c606ab33bb375x500.75126..jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\4a0bfecc-dc58-49bb-aa0d-d0c606ab33bb375x500.75126..jpg"
+    },
+    {
+      "Id": "C:\\Users\\GF65\\source\\repos\\Back-end_Project\\Back-end_Project\\wwwroot\\assets\\img\\4bc071fc-8648-42be-bab0-b9801d3907b2ghghgh.png",
+      "PackagePath": "staticwebassets\\assets\\img\\4bc071fc-8648-42be-bab0-b9801d3907b2ghghgh.png"
+    },
+    {
+      "Id": "C:\\Users\\GF65\\source\\repos\\Back-end_Project\\Back-end_Project\\wwwroot\\assets\\img\\567d025c-45da-4619-aee0-3f18608faef0ghghgh.png",
+      "PackagePath": "staticwebassets\\assets\\img\\567d025c-45da-4619-aee0-3f18608faef0ghghgh.png"
+    },
+    {
+      "Id": "C:\\Users\\GF65\\source\\repos\\Back-end_Project\\Back-end_Project\\wwwroot\\assets\\img\\5c11f684-64b7-484c-8d48-b660cb13da7549068410.png",
+      "PackagePath": "staticwebassets\\assets\\img\\5c11f684-64b7-484c-8d48-b660cb13da7549068410.png"
     },
     {
       "Id": "C:\\Users\\GF65\\source\\repos\\Back-end_Project\\Back-end_Project\\wwwroot\\assets\\img\\6e29a6d1-0daa-4c0f-a5c8-5f18112b3f03375x500.75126.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\6e29a6d1-0daa-4c0f-a5c8-5f18112b3f03375x500.75126.jpg"
     },
     {
+      "Id": "C:\\Users\\GF65\\source\\repos\\Back-end_Project\\Back-end_Project\\wwwroot\\assets\\img\\764594f3-5009-4b0b-97cb-c7ef1e19e588ghghgh.png",
+      "PackagePath": "staticwebassets\\assets\\img\\764594f3-5009-4b0b-97cb-c7ef1e19e588ghghgh.png"
+    },
+    {
       "Id": "C:\\Users\\GF65\\source\\repos\\Back-end_Project\\Back-end_Project\\wwwroot\\assets\\img\\772e0267-d364-499d-a8b6-82ce0f3eeb2e375x500.75126.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\772e0267-d364-499d-a8b6-82ce0f3eeb2e375x500.75126.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GF65\\source\\repos\\Back-end_Project\\Back-end_Project\\wwwroot\\assets\\img\\8af53e05-06eb-4d61-9792-76985b307c92375x500.75126..jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\8af53e05-06eb-4d61-9792-76985b307c92375x500.75126..jpg"
+    },
+    {
+      "Id": "C:\\Users\\GF65\\source\\repos\\Back-end_Project\\Back-end_Project\\wwwroot\\assets\\img\\8c14a707-aeca-458f-9905-90ce3847dd5149068410.png",
+      "PackagePath": "staticwebassets\\assets\\img\\8c14a707-aeca-458f-9905-90ce3847dd5149068410.png"
+    },
+    {
+      "Id": "C:\\Users\\GF65\\source\\repos\\Back-end_Project\\Back-end_Project\\wwwroot\\assets\\img\\8d3620fb-64a1-4b03-9891-f6ee02aee12c49068410.png",
+      "PackagePath": "staticwebassets\\assets\\img\\8d3620fb-64a1-4b03-9891-f6ee02aee12c49068410.png"
+    },
+    {
+      "Id": "C:\\Users\\GF65\\source\\repos\\Back-end_Project\\Back-end_Project\\wwwroot\\assets\\img\\a33825b4-f8d6-476c-b0ec-018a11d6777449068410.png",
+      "PackagePath": "staticwebassets\\assets\\img\\a33825b4-f8d6-476c-b0ec-018a11d6777449068410.png"
+    },
+    {
+      "Id": "C:\\Users\\GF65\\source\\repos\\Back-end_Project\\Back-end_Project\\wwwroot\\assets\\img\\a3ebf4e6-c14c-41b2-b5a3-3adde7b867a0375x500.75126..jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\a3ebf4e6-c14c-41b2-b5a3-3adde7b867a0375x500.75126..jpg"
+    },
+    {
+      "Id": "C:\\Users\\GF65\\source\\repos\\Back-end_Project\\Back-end_Project\\wwwroot\\assets\\img\\a6759568-7a49-48b0-8c40-adca7d1d0071ghghgh.png",
+      "PackagePath": "staticwebassets\\assets\\img\\a6759568-7a49-48b0-8c40-adca7d1d0071ghghgh.png"
+    },
+    {
+      "Id": "C:\\Users\\GF65\\source\\repos\\Back-end_Project\\Back-end_Project\\wwwroot\\assets\\img\\a9ad2e05-0ecd-4386-b46e-ed03a535bbfeghghgh.png",
+      "PackagePath": "staticwebassets\\assets\\img\\a9ad2e05-0ecd-4386-b46e-ed03a535bbfeghghgh.png"
     },
     {
       "Id": "C:\\Users\\GF65\\source\\repos\\Back-end_Project\\Back-end_Project\\wwwroot\\assets\\img\\aab1dc46-afca-4ff0-8d2a-5263d519aa99375x500.75126.jpg",
@@ -503,6 +595,10 @@
     {
       "Id": "C:\\Users\\GF65\\source\\repos\\Back-end_Project\\Back-end_Project\\wwwroot\\assets\\img\\about\\about.png",
       "PackagePath": "staticwebassets\\assets\\img\\about\\about.png"
+    },
+    {
+      "Id": "C:\\Users\\GF65\\source\\repos\\Back-end_Project\\Back-end_Project\\wwwroot\\assets\\img\\b126a6bf-6503-4238-b582-577f30b20708WhatsApp Image 2023-06-27 at 14.30.31.jpeg",
+      "PackagePath": "staticwebassets\\assets\\img\\b126a6bf-6503-4238-b582-577f30b20708WhatsApp Image 2023-06-27 at 14.30.31.jpeg"
     },
     {
       "Id": "C:\\Users\\GF65\\source\\repos\\Back-end_Project\\Back-end_Project\\wwwroot\\assets\\img\\b2852f9e-f1ab-48b1-8b50-b5e8915f0d5cMicrocontrollers-Types.jpg",
@@ -625,6 +721,18 @@
       "PackagePath": "staticwebassets\\assets\\img\\course\\courses-details.jpg"
     },
     {
+      "Id": "C:\\Users\\GF65\\source\\repos\\Back-end_Project\\Back-end_Project\\wwwroot\\assets\\img\\d731fb7a-c9f1-4538-9b5e-c08abc067aeaWhatsApp Image 2023-06-27 at 14.30.31.jpeg",
+      "PackagePath": "staticwebassets\\assets\\img\\d731fb7a-c9f1-4538-9b5e-c08abc067aeaWhatsApp Image 2023-06-27 at 14.30.31.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\GF65\\source\\repos\\Back-end_Project\\Back-end_Project\\wwwroot\\assets\\img\\dfcc5765-5ad2-4d34-a9fc-b2b9a414c23a375x500.75126..jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\dfcc5765-5ad2-4d34-a9fc-b2b9a414c23a375x500.75126..jpg"
+    },
+    {
+      "Id": "C:\\Users\\GF65\\source\\repos\\Back-end_Project\\Back-end_Project\\wwwroot\\assets\\img\\e93cc418-9065-4111-b69d-9623ba66593a375x500.75126..jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\e93cc418-9065-4111-b69d-9623ba66593a375x500.75126..jpg"
+    },
+    {
       "Id": "C:\\Users\\GF65\\source\\repos\\Back-end_Project\\Back-end_Project\\wwwroot\\assets\\img\\efa64267-155d-438a-9c49-8ca49b8a5fcb375x500.75126.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\efa64267-155d-438a-9c49-8ca49b8a5fcb375x500.75126.jpg"
     },
@@ -687,6 +795,14 @@
     {
       "Id": "C:\\Users\\GF65\\source\\repos\\Back-end_Project\\Back-end_Project\\wwwroot\\assets\\img\\event\\speaker2.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\event\\speaker2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GF65\\source\\repos\\Back-end_Project\\Back-end_Project\\wwwroot\\assets\\img\\f8683fd2-110b-463f-9f61-a354914f8483WhatsApp Image 2023-06-27 at 14.30.31.jpeg",
+      "PackagePath": "staticwebassets\\assets\\img\\f8683fd2-110b-463f-9f61-a354914f8483WhatsApp Image 2023-06-27 at 14.30.31.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\GF65\\source\\repos\\Back-end_Project\\Back-end_Project\\wwwroot\\assets\\img\\fa5cb34e-f47e-4d7d-81a0-0c58443eae47ghghgh.png",
+      "PackagePath": "staticwebassets\\assets\\img\\fa5cb34e-f47e-4d7d-81a0-0c58443eae47ghghgh.png"
     },
     {
       "Id": "C:\\Users\\GF65\\source\\repos\\Back-end_Project\\Back-end_Project\\wwwroot\\assets\\img\\footer\\footer1.jpg",
@@ -851,6 +967,10 @@
     {
       "Id": "C:\\Users\\GF65\\source\\repos\\Back-end_Project\\Back-end_Project\\wwwroot\\assets\\js\\plugins.js",
       "PackagePath": "staticwebassets\\assets\\js\\plugins.js"
+    },
+    {
+      "Id": "C:\\Users\\GF65\\source\\repos\\Back-end_Project\\Back-end_Project\\wwwroot\\assets\\js\\register.js",
+      "PackagePath": "staticwebassets\\assets\\js\\register.js"
     },
     {
       "Id": "C:\\Users\\GF65\\source\\repos\\Back-end_Project\\Back-end_Project\\wwwroot\\assets\\js\\vendor\\jquery-1.12.0.min.js",

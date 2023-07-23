@@ -111,8 +111,8 @@
                         </a>
                     </div>
                     <div class="course-content">
-                        <h3><a href="course-details.html">@course.Title</a></h3>
-                        <p>@course.Text</p>
+                        <h3><a href="course-details.html">@course.Name</a></h3>
+                        <p>@course.Description</p>
                         <a class="default-btn" href="course-details.html">read more</a>
                     </div>
                 </div>
@@ -140,19 +140,7 @@
                 </div>
             </div>
             <div class="col-md-6 col-sm-6 col-xs-12">
-                <div class="notice-left-wrapper">
-                    <h3>notice board</h3>
-                    <div class="notice-left">
-                        @foreach (var item in Model.notices)
-                        {
-                            <div class="single-notice-left mb-23 pb-20">
-                                <h4>@item.Date</h4>
-                                <p>@item.Link</p>
-                            </div>
-
-                        }
-                    </div>
-                </div>
+                <partial name="_noticePartialView" />
             </div>
         </div>
     </div>

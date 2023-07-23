@@ -1,0 +1,34 @@
+﻿@model List<Teacher>
+<div class="card-body">
+    <table class="table">
+        <thead>
+            <tr class="text-nowrap">
+                <th>Id</th>
+                <th>Image</th>
+                <th>Fullname</th>
+                <th>Created Time</th>
+                <th>Updated Time</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">@item.Id</th>
+                    <td><img src="~/assets/img/@item.Image" style="object-fit: cover; height: 100px; width: 100px;"></td>
+                    <td>@item.Fullname</td>
+                    <td>@item.CreatedTime</td>
+                    <td>@item.UpdatedTime</td>
+
+                    <td><a asp-controller="teachers" asp-action="update" asp-route-id="@item.Id" class="fa-solid fa-pen-to-square"><i></i></a></td>
+                    <td><a asp-controller="teachers" asp-action="delete" asp-route-id="@item.Id" class="fa-solid fa-trash-can"><i></i></a></td>
+
+                </tr>
+            }
+
+        </tbody>
+    </table>
+    <button style="border: none; color: white; background-color: lightskyblue"><a asp-area="admin" asp-controller="teachers" asp-action="create">Create Slide</a></button>
+</div>

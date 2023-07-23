@@ -1,0 +1,59 @@
+﻿@using Back_end_Project.ViewModels;
+@model AccountLoginVM
+@{
+    Layout = null;
+    var returnUrl = Context.Request.Query["ReturnUrl"];
+}
+<!doctype html>
+<html class="no-js" lang="en">
+
+<!-- Mirrored from demo.devitems.com/eduhome/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 21 Jun 2020 19:44:02 GMT -->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Eduhome - Educational HTML Template</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+	<link rel="stylesheet" href="~/admin/css/login.css">
+	<script src="~/admin/js/login.js"></script>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="container">
+			<h1>Welcome</h1>
+			<form class="form" method="post" asp-controller="account" asp-action="login">
+				<input asp-for="ReturnUrl" type="hidden" value="@returnUrl" />
+				<div asp-validation-summary="ModelOnly"></div>
+
+
+
+
+				<span asp-validation-for="Password"></span>
+				<input asp-for="Username" placeholder="Username">
+
+				<span asp-validation-for="Password"></span>
+				<input asp-for="Password" placeholder="Password">
+				<button type="submit" id="login-button">Login</button>
+			</form>
+		</div>
+
+		<ul class="bg-bubbles">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+</body>
+
+<!-- Mirrored from demo.devitems.com/eduhome/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 21 Jun 2020 19:44:02 GMT -->
+</html>

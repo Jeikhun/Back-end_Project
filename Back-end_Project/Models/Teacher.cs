@@ -50,7 +50,6 @@ namespace Back_end_Project.Models
 
         public string? Faculty { get; set; }
 
-        public List<TeacherHobbies>? TeacherHobbies { get; set; }
 
         [StringLength(maximumLength: 70)]
         [Required]
@@ -64,6 +63,7 @@ namespace Back_end_Project.Models
 
 
         public string? Image { get; set; }
+        public List<TeacherHobbies>? TeacherHobbies { get; set; }
 
         [NotMapped]
         //[Required]

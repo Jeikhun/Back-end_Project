@@ -1,10 +1,14 @@
 ﻿using Back_end_Project.context;
 using Back_end_Project.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System.Data;
 
 namespace Back_end_Project.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin")]
     public class NetworkController : Controller
     {
         private readonly EHDbContext _context;
@@ -14,36 +18,43 @@ namespace Back_end_Project.Areas.Admin.Controllers
         }
         public IActionResult Index()
         {
-            var hobbies = _context.hobbies.Where(x => !x.IsDeleted).ToList();
-            return View(hobbies);
+
+			ViewBag.Teachers = _context.teachers.ToList();
+			var network = _context.networks.Where(x => !x.IsDeleted)
+                .Include(x=> x.Teacher)
+                .ToList();
+            return View(network);
         }
         [HttpGet]
         public IActionResult Create()
         {
+			ViewBag.Teachers = _context.teachers.ToList();
 
 
-            return View();
+			return View();
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Hobby hobby)
+        public async Task<IActionResult> Create(Networks networks)
         {
-            if (!ModelState.IsValid)
+			ViewBag.Teachers = _context.teachers.ToList();
+
+			if (!ModelState.IsValid)
             {
                 return View();
             }
-            hobby.CreatedTime = DateTime.Now;
-            await _context.hobbies.AddAsync(hobby);
+            networks.CreatedTime = DateTime.Now;
+            await _context.networks.AddAsync(networks);
             await _context.SaveChangesAsync();
 
 
-            return RedirectToAction("index", "hobby");
+            return RedirectToAction("index", "network");
         }
         [HttpGet]
         public async Task<IActionResult> Delete(int id)
         {
-            Hobby? hobby = await _context.hobbies.FindAsync(id);
-            hobby.IsDeleted = true;
+            Networks? networks = await _context.networks.FindAsync(id);
+            networks.IsDeleted = true;
             _context.SaveChanges();
 
             return RedirectToAction(nameof(Index));
@@ -51,28 +62,30 @@ namespace Back_end_Project.Areas.Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> Update(int id)
         {
-            Hobby? hobby = _context.hobbies
+            Networks? networks = _context.networks
                 .Where(x => !x.IsDeleted && x.Id == id).FirstOrDefault();
-            if (hobby == null)
+            if (networks == null)
             {
                 return NotFound();
             }
-            return View(hobby);
+            return View(networks);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Update(Hobby hobby, int id)
+        public async Task<IActionResult> Update(Networks networks, int id)
         {
-            if (!ModelState.IsValid) return View(hobby);
-            var exHobby = await _context.hobbies.FindAsync(id);
-            if (exHobby == null) { return NotFound(); }
+            if (!ModelState.IsValid) return View(networks);
+            var exNetworks = await _context.networks.FindAsync(id);
+            if (exNetworks == null) { return NotFound(); }
 
-            exHobby.Name = hobby.Name;
-            exHobby.TeacherHobbies = hobby.TeacherHobbies;
-            hobby.UpdatedTime = DateTime.Now;
+            exNetworks.Teacher = networks.Teacher;
+            exNetworks.TeacherId = networks.TeacherId;
+            exNetworks.Icon = networks.Icon;
+            exNetworks.Link = networks.Link;
+            networks.UpdatedTime = DateTime.Now;
             await _context.SaveChangesAsync();
 
-            return RedirectToAction("index", "hobby");
+            return RedirectToAction("index", "network");
         }
     }
 }

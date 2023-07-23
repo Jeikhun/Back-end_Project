@@ -1,4 +1,4 @@
-﻿@model Back_end_Project.Models.Course
+﻿@model Course
 
     <div class="card-body">
         <form method="post" enctype="multipart/form-data">
@@ -12,15 +12,108 @@
 
             </div>
             <div class="form-group">
-                <label asp-for="Title" class="control-label"></label>
-                <input asp-for="Title" class="form-control" />
-                <span asp-validation-for="Title" class="text-danger"></span>
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Text" class="control-label"></label>
-                <input asp-for="Text" class="form-control" />
-                <span asp-validation-for="Text" class="text-danger"></span>
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
             </div>
+            <div class="form-group">
+                <label asp-for="AboutCourse" class="control-label"></label>
+            <input asp-for="AboutCourse" class="form-control" />
+            <span asp-validation-for="AboutCourse" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Apply" class="control-label"></label>
+            <input asp-for="Apply" class="form-control" />
+            <span asp-validation-for="Apply" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Certificiation" class="control-label"></label>
+            <input asp-for="Certificiation" class="form-control" />
+            <span asp-validation-for="Certificiation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StartDate" class="control-label"></label>
+                <input type="date" asp-for="StartDate" class="form-control" />
+                <span asp-validation-for="StartDate" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="CourseDuration" class="control-label"></label>
+            <input type="number" asp-for="CourseDuration" class="form-control" />
+            <span asp-validation-for="CourseDuration" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClassDuration" class="control-label"></label>
+            <input type="number" asp-for="ClassDuration" class="form-control" />
+            <span asp-validation-for="ClassDuration" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SkillLevel" class="control-label"></label>
+            <input asp-for="SkillLevel" class="form-control" />
+            <span asp-validation-for="SkillLevel" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="CLanguageId">Language</label>
+            <select asp-for="CLanguageId" class="form-select" aria-label="Default select example">
+                <option selected value="0">Select one of them</option>
+                @foreach (var item in ViewBag.Languages)
+                {
+                    <option value="@item.Id">@item.LanguageName</option>
+                }
+            </select>
+            <span asp-validation-for="CLanguageId" class="text text-danger"></span>
+        </div>
+            <div class="form-group">
+                <label asp-for="StudentCount" class="control-label"></label>
+            <input type="number" asp-for="StudentCount" class="form-control" />
+            <span asp-validation-for="StudentCount" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="CAssetsId">Assets</label>
+            <select asp-for="CAssetsId" class="form-select" aria-label="Default select example">
+                @foreach (var item in ViewBag.CourseAssests)
+                {
+                    <option value="@item.Id">@item.Name</option>
+                }
+            </select>
+            <span asp-validation-for="CAssetsId" class="text text-danger"></span>
+        </div>
+            <div class="form-group">
+                <label asp-for="CourseFee" class="control-label"></label>
+            <input asp-for="CourseFee" class="form-control" />
+            <span asp-validation-for="CourseFee" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CategoryIds" class="control-label"></label>
+            <select multiple asp-for="CategoryIds" class="form-control">
+                @foreach (var item in ViewBag.Categories)
+                {
+                    <option value="@item.Id">@item.Name </option>
+                }
+
+
+            </select>
+            <span asp-validation-for="CategoryIds" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TagIds" class="control-label"></label>
+            <select multiple asp-for="TagIds" class="form-control">
+
+                @foreach (var item in ViewBag.Tags)
+                {
+                    <option value="@item.Id">@item.Name </option>
+                }
+
+            <</select>
+            <span asp-validation-for="TagIds" class="text-danger"></span>
+            </div>
+
+
             <div class="form-group">
                 <div class="checkbox">
                     <label>
@@ -29,7 +122,8 @@
                 </div>
             </div>
             <div class="form-group">
-            <button type="submit">Save</button>
+            @Html.AntiForgeryToken()
+            <button type="submit" style="width: 180px;" class="btn btn-success btn-rounded">Create</button>
             </div>
         </form>
     </div>
