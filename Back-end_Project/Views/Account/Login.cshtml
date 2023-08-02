@@ -21,7 +21,7 @@
 	<script src="~/admin/js/login.js"></script>
 </head>
 <body>
-	<div class="wrapper">
+	<div class="wrapper" style="height: 500px; margin-top: -300px;">
 		<div class="container">
 			<h1>Welcome</h1>
 			<form class="form" method="post" asp-controller="account" asp-action="login">
@@ -31,12 +31,21 @@
 
 
 
-				<span asp-validation-for="Password"></span>
+				<span asp-validation-for="Username"></span>
 				<input asp-for="Username" placeholder="Username">
 
 				<span asp-validation-for="Password"></span>
 				<input asp-for="Password" placeholder="Password">
 				<button type="submit" id="login-button">Login</button>
+				
+				<div class="text-center" id="login-button">
+					<p>Do you have an account <a asp-controller="account" asp-action="register">Register</a></p>
+				</div>
+
+				<div class="text-center" id="login-button">
+					<p> <a asp-controller="account" asp-action="forgetpassword">Forgot account? </a></p>
+				</div>
+
 			</form>
 		</div>
 

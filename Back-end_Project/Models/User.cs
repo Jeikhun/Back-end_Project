@@ -5,5 +5,6 @@ namespace Back_end_Project.Models
 {
     public class User: IdentityUser
     {
+        
     }
 }

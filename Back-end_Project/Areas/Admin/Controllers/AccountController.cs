@@ -26,6 +26,7 @@ namespace Back_end_Project.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        
         public async Task<IActionResult> Register(AccountRegisterVM model)
         {
             if (ModelState.IsValid)

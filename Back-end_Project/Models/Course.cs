@@ -26,23 +26,20 @@ namespace Back_end_Project.Models
 		[Required]
 		public string SkillLevel { get; set; }
 		[Required]
-		public int CLanguageId { get; set; }
+		public int? CLanguageId { get; set; }
 		public Language? Language { get; set; }
 		[Required]
 		public int StudentCount { get; set; }
 		[Required]
 		public double CourseFee { get; set; }
 		[Required]
-		public int CAssetsId { get; set; }
+		public int? CAssetsId { get; set; }
 		public CAssets? CAssets { get; set; }
-		public List<CourseTag>? courseTags { get; set; }
-		[NotMapped]
-		public List<int>? TagIds { get; set; }
 		public List<CourseCategory>? courseCategories { get; set; }
 		[NotMapped]
-		public List<int> CategoryIds { get; set; }//bu hansinin idsdi nem hsyg course olomalidi
+		public List<int> CategoryIds { get; set; }
 		public string? Image { get; set; }
 		[NotMapped]
-		public IFormFile? FormFile { get; set; }
+		public IFormFile? FormFile { get; set; }//yox day hechne ishinde ol
 	}
 }

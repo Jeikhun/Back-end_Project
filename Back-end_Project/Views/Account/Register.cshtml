@@ -4,45 +4,64 @@
     Layout = null;
 }
 
-<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+<!doctype html>
+<html class="no-js" lang="en">
 
-<form method="post" asp-controller="account" asp-action="register">
-    
-
-        <div asp-validation-summary="ModelOnly"></div>
-
-        <div class="form-outline mb-4">
-        <label class="form-label" asp-for="Email">E-mail</label>
-        <input class="form-control" asp-for="Email" />
-        <span asp-validation-for="Email"></span>
-        </div>
-
-    <div class="form-outline mb-4">
-        <label class="form-label" asp-for="Username">Username</label>
-        <input class="form-control" asp-for="Username" />
-        <span asp-validation-for="Username"></span>
-    </div>
+<!-- Mirrored from demo.devitems.com/eduhome/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 21 Jun 2020 19:44:02 GMT -->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Eduhome - Educational HTML Template</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <div class="form-outline mb-4">
-        <label class="form-label" asp-for="Password">Password</label>
-        <input class="form-control" asp-for="Password" />
-        <span asp-validation-for="Password"></span>
-    </div>
+
+	<link rel="stylesheet" href="~/admin/css/login.css">
+	<script src="~/admin/js/login.js"></script>
+</head>
+<body>
+	<div class="wrapper" style=" height: 650px; margin-top: -300px;">
+		<div class="container">
+			<h1>Welcome</h1>
+			<form class="form" method="post" asp-controller="account" asp-action="register">
+				<div asp-validation-summary="ModelOnly"></div>
 
 
-    <div class="form-outline mb-4">
-        <label class="form-label" asp-for="ConfirmPassword">ConfirmPassword</label>
-        <input class="form-control" asp-for="ConfirmPassword" />
-        <span asp-validation-for="ConfirmPassword"></span>
-    </div>
+				<span asp-validation-for="Email"></span>
+				<input asp-for="Email" placeholder="Email">
 
-    <button type="submit" class="btn btn-primary btn-block mb-4">Register</button>
-        
-            <div class="text-center">
-                <p>Already have an account? <a asp-controller="account" asp-action="login">Login</a></p>
-            </div>
-</form>
+				<span asp-validation-for="Username"></span>
+				<input asp-for="Username" placeholder="Username">
+
+				<span asp-validation-for="Password"></span>
+				<input asp-for="Password" placeholder="Password">
+
+				<span asp-validation-for="ConfirmPassword"></span>
+				<input asp-for="ConfirmPassword" placeholder="ConfirmPassword">
+				<button type="submit" id="login-button">Register</button>
+				<div class="text-center" id="login-button">
+					<p>Already have an account? <a asp-controller="account" asp-action="login">Login</a></p>
+				</div>
+			</form>
+
+
+		</div>
+
+		<ul class="bg-bubbles">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+</body>
+
+<!-- Mirrored from demo.devitems.com/eduhome/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 21 Jun 2020 19:44:02 GMT -->
+</html>

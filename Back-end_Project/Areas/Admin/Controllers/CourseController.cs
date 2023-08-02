@@ -31,7 +31,6 @@ namespace Back_end_Project.Areas.Admin.Controllers
         public IActionResult Create()
         {
             ViewBag.Languages = _dbContext.Languages.Where(x=>!x.IsDeleted).ToList();
-            ViewBag.Tags = _dbContext.Tags.Where(x=>!x.IsDeleted).ToList();
             ViewBag.Categories = _dbContext.Categories.Where(x=>!x.IsDeleted).ToList();
             ViewBag.CourseAssests = _dbContext.cAssets.Where(x => !x.IsDeleted).ToList();
 
@@ -40,19 +39,19 @@ namespace Back_end_Project.Areas.Admin.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
+
         public async Task<IActionResult> Create(Course course)
         {
             ViewBag.Languages = _dbContext.Languages.Where(x => !x.IsDeleted).ToList();
-            ViewBag.Tags = _dbContext.Tags.Where(x => !x.IsDeleted).ToList();
             ViewBag.Categories = _dbContext.Categories.Where(x => !x.IsDeleted).ToList();
 
             if (!ModelState.IsValid)
             {
                 return View();
             }
-            if (!course.FormFile.ContentType.Contains("image"))//yanlish extention ile file daxil edilmesinin qarshisinin alinmasi uchun
+            if (!course.FormFile.ContentType.Contains("image"))
             {
-                ModelState.AddModelError("FormFile", "Duzgun daxil etmemisiniz"); //error mesaji qaytarmaq uchun
+                ModelState.AddModelError("FormFile", "Duzgun daxil etmemisiniz"); 
             }
             course.Image = course.FormFile.CreateImage(_env.WebRootPath, "assets/img/");
 
@@ -73,23 +72,6 @@ namespace Back_end_Project.Areas.Admin.Controllers
                 await _dbContext.courseCategories.AddAsync(courseCategories);
 
             }
-            foreach (var item in course.TagIds)
-            {
-                if (!await _dbContext.Tags.AnyAsync(x => x.Id == item))
-                {
-                    ModelState.AddModelError("", "-----");
-                    return View(course);
-                }
-                CourseTag courseTags = new CourseTag
-                {
-                    CourseId = item,
-                    Course = course,
-                    CreatedTime = DateTime.Now
-                };
-                await _dbContext.courseTags.AddAsync(courseTags);
-
-            }
-
             course.CreatedTime = DateTime.Now;
             await _dbContext.courses.AddAsync(course);
             await _dbContext.SaveChangesAsync();

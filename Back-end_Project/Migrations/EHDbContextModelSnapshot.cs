@@ -90,10 +90,12 @@ namespace Back_end_Project.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("CAssetsId")
+                    b.Property<int?>("CAssetsId")
+                        .IsRequired()
                         .HasColumnType("int");
 
-                    b.Property<int>("CLanguageId")
+                    b.Property<int?>("CLanguageId")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("Certificiation")
@@ -185,38 +187,6 @@ namespace Back_end_Project.Migrations
                     b.HasIndex("CourseId");
 
                     b.ToTable("courseCategories");
-                });
-
-            modelBuilder.Entity("Back_end_Project.Models.CourseTag", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("CourseId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("CreatedTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("TagId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("UpdatedTime")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CourseId");
-
-                    b.HasIndex("TagId");
-
-                    b.ToTable("courseTags");
                 });
 
             modelBuilder.Entity("Back_end_Project.Models.Hobby", b =>
@@ -427,32 +397,6 @@ namespace Back_end_Project.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("slides");
-                });
-
-            modelBuilder.Entity("Back_end_Project.Models.Tag", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<DateTime>("CreatedTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("UpdatedTime")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Tags");
                 });
 
             modelBuilder.Entity("Back_end_Project.Models.Teacher", b =>
@@ -790,25 +734,6 @@ namespace Back_end_Project.Migrations
                     b.Navigation("Course");
                 });
 
-            modelBuilder.Entity("Back_end_Project.Models.CourseTag", b =>
-                {
-                    b.HasOne("Back_end_Project.Models.Course", "Course")
-                        .WithMany("courseTags")
-                        .HasForeignKey("CourseId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Back_end_Project.Models.Tag", "Tag")
-                        .WithMany("CourseTag")
-                        .HasForeignKey("TagId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Course");
-
-                    b.Navigation("Tag");
-                });
-
             modelBuilder.Entity("Back_end_Project.Models.Networks", b =>
                 {
                     b.HasOne("Back_end_Project.Models.Teacher", "Teacher")
@@ -903,8 +828,6 @@ namespace Back_end_Project.Migrations
             modelBuilder.Entity("Back_end_Project.Models.Course", b =>
                 {
                     b.Navigation("courseCategories");
-
-                    b.Navigation("courseTags");
                 });
 
             modelBuilder.Entity("Back_end_Project.Models.Hobby", b =>
@@ -915,11 +838,6 @@ namespace Back_end_Project.Migrations
             modelBuilder.Entity("Back_end_Project.Models.Language", b =>
                 {
                     b.Navigation("Courses");
-                });
-
-            modelBuilder.Entity("Back_end_Project.Models.Tag", b =>
-                {
-                    b.Navigation("CourseTag");
                 });
 
             modelBuilder.Entity("Back_end_Project.Models.Teacher", b =>

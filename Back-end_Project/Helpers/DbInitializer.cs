@@ -19,7 +19,7 @@ namespace Back_end_Project.Helpers
 
                 }
             }
-            if((await userManager.FindByNameAsync("admin"))== null)
+            if ((await userManager.FindByNameAsync("admin")) == null)
             {
 
                 var user = new User
@@ -27,7 +27,6 @@ namespace Back_end_Project.Helpers
                     UserName = "admin",
                     Email = "admin@mail.ru",
                     EmailConfirmed = true,
-
                 };
                 var result = await userManager.CreateAsync(user, "Admin123!");
 
